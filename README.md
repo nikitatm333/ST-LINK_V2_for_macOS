@@ -33,7 +33,36 @@ mkdir stlink_v2 && cd stlink_v2
 git clone https://github.com/texane/stlink.git && cd stlink/
 ```
 
+Создаем папку для сборки:  
 
+```
+mkdir build && cd build
+```
+
+Установка CMake через Homebrew:
+
+```
+brew install cmake
+```
+
+Генерация файлов сборки с CMake:  
+(Запускаем в родительской папке)
+
+```
+cmake ..
+```
+
+Компилируем проект:
+
+```
+make
+```
+
+Установка программ:
+
+```
+sudo make install
+```
 
 
 
