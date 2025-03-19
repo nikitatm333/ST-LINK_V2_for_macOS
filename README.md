@@ -6,7 +6,7 @@ Homebrew — это менеджер пакетов для macOS, которы�
 
 Качаем его командой:
 ```
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 Далее нам понадобится несколько инструментов:
@@ -17,20 +17,20 @@ Homebrew — это менеджер пакетов для macOS, которы�
 - libusb-compat – совместимая версия libusb для программ, ожидающих API старой версии libusb-0.1.
   
 ```
-`brew install autoconf automake pkg-config libusb libusb-compat"`
+brew install autoconf automake pkg-config libusb libusb-compat"
 ```
 
 Stlink — это open-source проект, исходники которого можно взять тут [https://github.com/texane/stlink.git].  
 Перед клонированием репозитория создаем папку, в которую сохраним проект.  
 
 ```
-`mkdir stlink_v2 && cd stlink_v2`
+mkdir stlink_v2 && cd stlink_v2
 ```
 
 Клонируем репозиторий:
 
 ```
-`git clone https://github.com/texane/stlink.git && cd stlink/`
+git clone https://github.com/texane/stlink.git && cd stlink/
 ```
 
 
