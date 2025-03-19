@@ -106,7 +106,25 @@ error: 'MINIMAL_API_VERSION' is not defined, evaluates to 0 [-Werror,-Wundef]
     #define MINIMAL_API_VERSION 0x01000106 // v1.0.22
   ```
 
+## Проверка подключения stlink v2
 
+  ```
+ st-info --probe
+  ```
 
+### Если возникает ошибка, то добавьте путь к библиотеке в DYLD_LIBRARY_PATH:
 
+  ```
+ export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH
+  ```
+### Вывод должен быть примерно такой (может потребоваться нажать на RESET):
 
+  ```
+Found 1 stlink programmers
+  version:    V2J45S7
+  serial:     620031000D0000393333574E
+  flash:      0 (pagesize: 1024)
+  sram:       20480
+  chipid:     0x410
+  dev-type:   STM32F1xx_MD
+  ```
