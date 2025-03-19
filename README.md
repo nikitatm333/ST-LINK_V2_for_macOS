@@ -58,12 +58,52 @@ cmake ..
 ```
 make
 ```
+(Если на этом моменте возникает ошибка, то в конце есть ее возможное решение)
+
 
 Установка программ:
 
 ```
 sudo make install
 ```
+
+
+# Нюансы 
+## Проблема с компиляцией на macOS
+При выполнении команды make для сборки проекта может возникнуть следующая ошибка:
+
+```
+In file included from .../libusb_settings.h:49:26:
+error: 'MINIMAL_API_VERSION' is not defined, evaluates to 0 [-Werror,-Wundef]
+```
+### Причина ошибки
+Ошибка возникает потому, что в файле libusb_settings.h макрос MINIMAL_API_VERSION не определён для платформы macOS. В исходном коде проекта этот макрос задан только для систем FreeBSD, OpenBSD, Linux и Windows, а для macOS отсутствует соответствующее определение.
+
+### Решение
+Чтобы устранить ошибку, необходимо отредактировать файл libusb_settings.h и добавить определение MINIMAL_API_VERSION для macOS. Например, можно внести следующие изменения:
+
+- Откройте файл по пути:
+  ```
+  stlink/src/stlink-lib/libusb_settings.h
+  ```
+- Найдите блок с определениями платформ:
+  ```
+  #if defined (__FreeBSD__)
+    #define MINIMAL_API_VERSION 0x01000102 // v1.0.16
+  #elif defined (__OpenBSD__)
+      #define MINIMAL_API_VERSION 0x01000106 // v1.0.22
+  #elif defined (__linux__)
+      #define MINIMAL_API_VERSION 0x01000106 // v1.0.22
+  #elif defined (_WIN32)
+      #define MINIMAL_API_VERSION 0x01000109 // v1.0.25
+  #endif
+  ```
+- Добавьте условие для macOS:
+  ```
+  #elif defined (__APPLE__)
+    #define MINIMAL_API_VERSION 0x01000106 // v1.0.22
+  ```
+
 
 
 
