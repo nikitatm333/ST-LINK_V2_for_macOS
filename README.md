@@ -4,6 +4,6 @@
 Для начала установим Homebrew [Homebrew](https://brew.sh/)
 Homebrew — это менеджер пакетов для macOS, который значительно упрощает процесс установки, обновления и удаления программного обеспечения через терминал. Он поможет в установке инструментов и библиотек, которых нет в стандартной поставке macOS.
 
-`код в одну строку`
+`вводим в терминал: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 'вводим в терминал: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
