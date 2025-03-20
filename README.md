@@ -133,7 +133,7 @@ Found 1 stlink programmers
 Если у вас файл с раширением .elf то измените его на бинарный:
 
 ```
-arm-none-eabi-objcopy -O binary /f103c8t6_v1.elf /f103c8t6.bin
+arm-none-eabi-objcopy -O binary f103c8t6_v1.elf f103c8t6.bin
 ```
 Во время прошивки может потребоваться (если возникает ошибка) перевести джампер BOOT0 в 1:
 - Переключите BOOT0 в 1 (соедините BOOT0 с 3.3V).
