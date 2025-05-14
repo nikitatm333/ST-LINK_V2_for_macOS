@@ -139,7 +139,7 @@ arm-none-eabi-objcopy -O binary f103c8t6_v1.elf f103c8t6.bin
 - Переключите BOOT0 в 1 (соедините BOOT0 с 3.3V).
 - Подключите плату и попробуйте прошить её.
   ```
-  st-flash write /Users/nikitatomilin/stm32project/f103c8t6.bin 0x08000000
+  st-flash write /Users/you_prof/stm32project/f103c8t6.bin 0x08000000
   ```
 - После прошивки верните BOOT0 в 0 и нажмите RESET, чтобы микроконтроллер загрузился с флеш-памяти.
 
